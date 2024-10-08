@@ -1,0 +1,14 @@
+name: rake
+
+on:
+  push:
+    branches: [ master, main ]
+    tags: [ v* ]
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  rake:
+    uses: fontist/support/.github/workflows/rake.yml@main

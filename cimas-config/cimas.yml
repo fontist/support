@@ -1,0 +1,16 @@
+---
+settings:
+  reviewers: {}
+  author: []
+
+repositories:
+  fontist:
+    remote: ssh://git@github.com/fontist/fontist
+    branch: main
+    files:
+      .github/workflows/release.yml: gh-actions/master/release.yml
+
+groups:
+  core:
+  - relaton.org
+  ignore:

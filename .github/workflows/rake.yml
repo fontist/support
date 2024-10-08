@@ -1,0 +1,24 @@
+name: rake
+
+on:
+  workflow_call:
+    inputs:
+      tests-passed-event:
+        description: Name of event sent with repository-dispatch after rake tests are passed successfully
+        default: 'tests-passed'
+        type: string
+      release-event:
+        description: Name of event sent to initiate release
+        default: 'do-release'
+        type: string
+    secrets:
+      pat_token:
+        required: false
+jobs:
+  rake:
+    uses: metanorma/ci/.github/workflows/generic-rake.yml@main
+    with:
+      tests-passed-event: ${{ inputs.tests-passed-event }}
+      release-event: ${{ inputs.release-event }}
+    secrets:
+      pat_token: ${{ secrets.pat_token || github.token }}

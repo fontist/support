@@ -1,0 +1,24 @@
+name: release
+
+on:
+  workflow_call:
+    inputs:
+      next_version:
+        required: true
+        type: string
+      release_command:
+        description: 'command to release gem'
+        required: false
+        type: string
+        default: bundle exec rake release
+    secrets:
+      rubygems-api-key:
+        required: true
+jobs:
+  release:
+    uses: metanorma/ci/.github/workflows/rubygems-release.yml@main
+    with:
+      next_version: ${{ inputs.next_version }}
+      release_command: ${{ inputs.release_command }}
+    secrets:
+      rubygems-api-key: ${{ secrets.rubygems-api-key }}

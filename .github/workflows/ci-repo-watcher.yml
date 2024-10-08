@@ -1,0 +1,13 @@
+name: ci-repo-watcher
+
+on:
+  schedule:
+  - cron: "0 0 * * *" # once a day https://crontab.guru/#0_0_*_*
+  workflow_dispatch:
+  workflow_call:
+
+jobs:
+  watcher:
+    uses: metanorma/ci/.github/workflows/ci-repo-watcher.yml@main
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,11 @@
+name: ci-lint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  lint:
+    uses: metanorma/ci/.github/workflows/ci-lint.yml@main
+

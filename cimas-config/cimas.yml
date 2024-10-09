@@ -9,8 +9,76 @@ repositories:
     branch: main
     files:
       .github/workflows/release.yml: gh-actions/master/release.yml
+  cpio:
+    remote: ssh://git@github.com/fontist/cpio
+    branch: master
+    files:
+      .github/workflows/rake.yml: gh-actions/master/rake.yml
+      .github/workflows/release.yml: gh-actions/master/release.yml
+  excavate:
+    remote: ssh://git@github.com/fontist/excavate
+    branch: main
+    files: # TODO
+  extract_ttc:
+    remote: ssh://git@github.com/fontist/extract_ttc
+    branch: main
+    files: # TODO
+  ffi-libarchive-binary:
+    remote: ssh://git@github.com/fontist/extract_ttc
+    branch: main
+    files: # TODO
+  ruby-xar:
+    remote: ssh://git@github.com/fontist/ruby-xar
+    branch: main
+    files: # TODO
+
+  formulas:
+    remote: ssh://git@github.com/fontist/formulas
+    branch: v4
+    files:
+  example-formulas:
+    remote: ssh://git@github.com/fontist/example-formulas
+    branch: main
+    files:
+
+  fontist.github.io:
+    remote: ssh://git@github.com/fontist/fontist.github.io
+    branch: main
+    files:
+
+  noto-fonts:
+    remote: ssh://git@github.com/fontist/ruby-xar
+    branch: main
+    files:
+  source-fonts:
+    remote: ssh://git@github.com/fontist/source-fonts
+    branch: main
+    files:
+  vista-fonts-installer:
+    remote: ssh://git@github.com/fontist/vista-fonts-installer
+    branch: main
+    files:
 
 groups:
   core:
-  - relaton.org
+  - fontist
+  - cpio
+  - excavate
+  - extract_ttc
+  - ruby-xar
+  - ffi-libarchive-binary
+  site:
+  - fontist.github.io
+  fonts:
+  - source-fonts
+  - noto-fonts
   ignore:
+  - formulas
+  - example-formulas
+  - noto-fonts
+  - source-fonts
+  - vista-fonts-installer
+  - oss-guides
+  - support
+  - fontist.github.io
+  - setup-fontist

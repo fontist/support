@@ -1,8 +1,0 @@
-name: keep-alive
-on:
-  schedule:
-  - cron: "0 0 1 * *" # on the first day-of-month
-
-jobs:
-  keep-alive:
-    uses: metanorma/ci/.github/workflows/keep-alive.yml@main

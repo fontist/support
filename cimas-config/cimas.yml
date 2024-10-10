@@ -59,6 +59,11 @@ repositories:
     branch: main
     files:
 
+  support:
+    remote: ssh://git@github.com/fontist/support
+    branch: main
+    files:
+
 groups:
   core:
   - fontist
